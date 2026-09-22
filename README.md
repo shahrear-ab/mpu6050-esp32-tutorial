@@ -51,3 +51,69 @@ Therefore:
 3-axis Gyroscope
         =
 6-axis IMU
+```
+
+# MPU6050 + ESP32 Tutorial
+
+A practical ESP32 project demonstrating the **MPU6050 6-axis IMU**, including accelerometer readings, gyroscope readings, tilt estimation, gyro integration, calibration, and motion detection using LEDs.
+
+## 📌 Features
+
+- 3-axis accelerometer readings
+- 3-axis gyroscope readings
+- Pitch and roll estimation using gravity
+- Gyroscope angle integration
+- Gyroscope bias calibration
+- Motion-intensity LED indicator
+- ESP32 I²C communication
+
+---
+
+## 🔧 Hardware
+
+- ESP32 development board
+- MPU6050 module
+- Blue, Green & Red LEDs
+- 3 × 337 Ω resistors
+- Breadboard
+- Jumper wires
+
+---
+
+## 🔌 Wiring
+
+### MPU6050 → ESP32
+
+| MPU6050 | ESP32 |
+|---|---|
+| VCC | 3.3V |
+| GND | GND |
+| SDA | GPIO 21 |
+| SCL | GPIO 22 |
+
+### LEDs → ESP32
+
+| LED | GPIO | Resistor |
+|---|---:|---:|
+| 🔵 Blue | GPIO 13 | 337 Ω |
+| 🟢 Green | GPIO 14 | 337 Ω |
+| 🔴 Red | GPIO 26 | 337 Ω |
+
+Connect each LED in series with its resistor to GND.
+
+---
+
+## 📁 Project Structure
+
+```text
+mpu6050-esp32-tutorial/
+│
+├── README.md
+├── LICENSE
+│
+├── code/
+│   ├── mpu6050_accelerometer_gyroscope/
+│   │   └── mpu6050_accelerometer_gyroscope.ino
+│   │
+│   └── mpu6050_motion_led/
+│       └── mpu6050_motion_led.ino
